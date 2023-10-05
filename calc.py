@@ -3,13 +3,10 @@ import os
 import time
 
 clear = lambda: os.system('cls')
-sin = math.sin
-cos = math.cos
-
-while True:
+while 1 == 1:
     print('Добро пожаловать в универсальную программу для вычислений, для начала работы выберите пункт.')
     print()
-    print('1 - Калькулятор; 2 - Вычисление квадратного корня; 3 - Решение квадратных уравнений через дискриминант; 4 - Тригонометрия.')
+    print('1 - Калькулятор; 2 - Вычисление квадратного корня; 3 - Решение квадратных уравнений через дискриминант; 4 - Тригонометрия; 5 - Теорема Пифагора.')
     print()
     choice = int(input('Введите номер пункта: '))
     print()
@@ -43,24 +40,24 @@ while True:
         b = int(input('Введите b: '))
         c = int(input('Введите c: '))
         print()
-        print('D = b^2 - 4ac.')
+        D = (b**2) - (4*a*c)
+        print('D = b^2 - 4ac = ' + str(D))
         print()
-        D = (b**2) - (4 * a * c)
         if D < 0:
             print('Корней нет. ')
         elif D == 0:
-            print('1 корень. ')
+            print('1 корень; ')
             print()
-            print('x = -(b / 2a)')
-            x = -b / 2 * a
+            x = -b/2*a
+            print('x = -(b / 2a) = ' + str(x) + ';')
             print('Ответ: ' + str(x) + '.')
         elif D > 0:
             print('2 корня.')
             print()
-            print('x1 = -(b - √D) / (2a)')
-            print('x2 = -(b + √D) / (2a)')
             x1 = -(b - math.sqrt(D)) / (2*a)
             x2 = -(b + math.sqrt(D)) / (2*a)
+            print('x1 = -(b - √D) / (2a) = ' + str(x1) + ';')
+            print('x2 = -(b + √D) / (2a) = ' + str(x2) + ';')
             print()
             print('Ответ: ' + str(x1) + '; ' + str(x2) + '.')
     elif choice == 4:
@@ -82,9 +79,51 @@ while True:
             xsinrcos = math.sqrt(1 - trx**2)
             print()
             print('Ответ: ' + str(xsinrcos) + '.')
+        else:
+            print('Выбран несуществующий пункт.')
+    elif choice == 5:
+        print('Вы выбрали Теорему Пифагора.')
+        print()
+        print('Выберите то, что нужно найти.')
+        print()
+        print('1 - Катет; 2 - Гипотенузу;')
+        print()
+        korg = int(input('Введите пункт: '))
+        print()
+        if korg == 1:
+            a = int(input('Введите значение известного катета: '))
+            print()
+            c = int(input('Введите значение гипотенузы: '))
+            b2 = gi**2 - k**2
+            b = math.sqrt(b2)
+            print()
+            print('k^2 = ' + str(b2) + ';')
+            print('Ответ: ' + str(b) + '.')
+        elif korg == 2:
+            a = int(input('Введите значение первого катета: '))
+            b = int(input('Введите значение второго катета: '))
+            c2 = a**2 + b**2
+            c = math.sqrt(c2)
+            print()
+            print('c^2 = ' + str(c2) + ';')
+            print('Ответ: ' + str(c) + '.')
+        else:
+            print('Выбран несуществующий пункт.')
+    elif choice == 6:
+        print('Выбрана секретная функция!')
+        print()
+        print('Вы выбрали проблему 3x + 1;')
+        print()
+        integer = int(input('Введите любое число: '))
+        while integer != 2:
+            if integer % 2 == 0:
+                integer/=2
+                print(integer)
+            else:
+                integer*=3
+                print(integer)
     else:
         print('Выбран несуществущий пункт. ')
     print()
-    print('Подождите 5 секунд для очистки терминала... ')
-    time.sleep(5)
+    input('Нажмите Enter, чтобы очистить терминал... ')
     clear()
