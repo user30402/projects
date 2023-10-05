@@ -109,19 +109,6 @@ while 1 == 1:
             print('Ответ: ' + str(c) + '.')
         else:
             print('Выбран несуществующий пункт.')
-    elif choice == 6:
-        print('Выбрана секретная функция!')
-        print()
-        print('Вы выбрали проблему 3x + 1;')
-        print()
-        integer = int(input('Введите любое число: '))
-        while integer != 2:
-            if integer % 2 == 0:
-                integer/=2
-                print(integer)
-            else:
-                integer*=3
-                print(integer)
     else:
         print('Выбран несуществущий пункт. ')
     print()
