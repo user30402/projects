@@ -3,11 +3,13 @@ import os
 import time
 
 clear = lambda: os.system('cls')
+sin = math.sin
+cos = math.cos
 
 while True:
     print('Добро пожаловать в универсальную программу для вычислений, для начала работы выберите пункт.')
     print()
-    print('1 - Калькулятор; 2 - Вычисление квадратного корня; 3 - Решение квадратных уравнений через дискриминант.')
+    print('1 - Калькулятор; 2 - Вычисление квадратного корня; 3 - Решение квадратных уравнений через дискриминант; 4 - Тригонометрия.')
     print()
     choice = int(input('Введите номер пункта: '))
     print()
@@ -61,9 +63,28 @@ while True:
             x2 = -(b + math.sqrt(D)) / (2*a)
             print()
             print('Ответ: ' + str(x1) + '; ' + str(x2) + '.')
+    elif choice == 4:
+        print('Вы выбрали тригонометрию.')
+        print()
+        print('Выберите то, что нужно найти.')
+        print()
+        print('1 - Синус; 2 - Косинус;')
+        print()
+        ask = int(input('Введите пункт: '))
+        print()
+        if ask == 1:
+            trx = float(input('Введите косинус: '))
+            xsinrcos = math.sqrt(1 - trx**2)
+            print()
+            print('Ответ: ' + str(xsinrcos) + '.')
+        elif ask == 2:
+            trx = float(input('Введите синус: '))
+            xsinrcos = math.sqrt(1 - trx**2)
+            print()
+            print('Ответ: ' + str(xsinrcos) + '.')
     else:
         print('Выбран несуществущий пункт. ')
     print()
-    print('Подождите 5 секунд для очистки консоли... ')
+    print('Подождите 5 секунд для очистки терминала... ')
     time.sleep(5)
     clear()
