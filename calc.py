@@ -1,6 +1,5 @@
 import math
 import os
-import time
 
 clear = lambda: os.system('cls')
 while 1 == 1:
@@ -9,6 +8,8 @@ while 1 == 1:
     print('1 - Калькулятор; 2 - Вычисление квадратного корня; 3 - Решение квадратных уравнений через дискриминант; 4 - Тригонометрия; 5 - Теорема Пифагора.')
     print()
     choice = int(input('Введите номер пункта: '))
+    print()
+    print('--------------------')
     print()
     if choice == 1:
         print('Вы выбрали калькулятор.')
@@ -98,6 +99,7 @@ while 1 == 1:
             b = math.sqrt(b2)
             print()
             print('k^2 = ' + str(b2) + ';')
+            print()
             print('Ответ: ' + str(b) + '.')
         elif korg == 2:
             a = int(input('Введите значение первого катета: '))
@@ -106,11 +108,14 @@ while 1 == 1:
             c = math.sqrt(c2)
             print()
             print('c^2 = ' + str(c2) + ';')
+            print()
             print('Ответ: ' + str(c) + '.')
         else:
             print('Выбран несуществующий пункт.')
     else:
         print('Выбран несуществущий пункт. ')
+    print()
+    print('--------------------')
     print()
     input('Нажмите Enter, чтобы очистить терминал... ')
     clear()
