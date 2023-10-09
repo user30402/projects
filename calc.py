@@ -2,10 +2,17 @@ import math
 import os
 
 clear = lambda: os.system('cls')
+
 while 1 == 1:
+    print('--------------------')
+    print()
     print('Добро пожаловать в универсальную программу для вычислений, для начала работы выберите пункт.')
     print()
-    print('1 - Калькулятор; 2 - Вычисление квадратного корня; 3 - Решение квадратных уравнений через дискриминант; 4 - Тригонометрия; 5 - Теорема Пифагора.')
+    print('--------------------')
+    print()
+    print('1 - Калькулятор; 2 - Вычисление квадратного корня; 3 - Решение квадратных уравнений через дискриминант; 4 - Тригонометрия; 5 - Теорема Пифагора; 6 - Калькулятор дробей; 7 - Перевод дробей.')
+    print()
+    print('--------------------')
     print()
     choice = int(input('Введите номер пункта: '))
     print()
@@ -28,6 +35,8 @@ while 1 == 1:
             print('Ответ: ' + str(num1 / num2))
         elif sign == '**' or sign == '^':
             print('Ответ: ' + str(num1 ** num2))
+        else:
+            print('Введён неизвестный знак.')
     elif choice == 2:
         print('Вы выбрали вычисление квадратного корня.')
         print()
@@ -61,6 +70,8 @@ while 1 == 1:
             print('x2 = -(b + √D) / (2a) = ' + str(x2) + ';')
             print()
             print('Ответ: ' + str(x1) + '; ' + str(x2) + '.')
+        else:
+            print('Неизвестная ошибка.')
     elif choice == 4:
         print('Вы выбрали тригонометрию.')
         print()
@@ -110,6 +121,68 @@ while 1 == 1:
             print('c^2 = ' + str(c2) + ';')
             print()
             print('Ответ: ' + str(c) + '.')
+        else:
+            print('Выбран несуществующий пункт.')
+    elif choice == 6:
+        print('Вы выбрали калькулятор дробей.')
+        print()
+        a = int(input('Введите числитель первой дроби: '))
+        b = int(input('Введите знаменатель первой дроби: '))
+        print()
+        sign = input('Введите знак: ')
+        print()
+        c = int(input('Введите числитель второй дроби: '))
+        d = int(input('Введите знаменатель второй дроби: '))
+        print()
+        if sign == '+':
+            if b == d:
+                sac = a + c
+                print('Ответ: ' + str(sac) + '/' + str(b) + '.')
+            elif b != d:
+                bd = b*d
+                ad = a*d
+                cb = c*b
+                adcb = ad+cb
+                print('Ответ: ' + str(adcb) + '/' + str(bd) + '.')
+            else:
+                print('Неизвестная ошибка.')
+        elif sign == '-':
+            if b == d:
+                rac = a - c
+                print('Ответ: ' + str(rac) + '/' + str(b) + '.')
+            elif b != d:
+                rbd = b*d
+                rad = a*d
+                rcb = c*b
+                radcb = rad-rcb
+                print('Ответ: ' + str(radcb) + '/' + str(bd) + '.')
+            else:
+                print('Неизвестная ошибка.')
+        elif sign == '*':
+            ac = a*c
+            bd = b*d
+            print('Ответ: ' + str(ac) + '/' + str(bd) + '.')
+        elif sign == '/':
+            ad = a*d
+            bc = b*c
+            print('Ответ: ' + str(int(ad)) + '/' + str(int(bc)) + '.')
+        else:
+            print('Введён неизвестный знак.')
+    elif choice == 7:
+        print('Вы выбрали перевод дробей.')
+        print()
+        print('Выберите метод перевода.')
+        print()
+        print('1 - Обыкновенная -> Десятичная.')
+        print()
+        choice = int(input('Введите пункт: '))
+        print()
+        if choice == 1:
+            a = int(input('Введите числитель дроби: '))
+            b = int(input('Введите знаменатель дроби: '))
+            print()
+            chab = a/b
+            print('Ответ: ' + str(chab) + '.')
         else:
             print('Выбран несуществующий пункт.')
     else:
