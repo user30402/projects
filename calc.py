@@ -23,6 +23,7 @@ while 1 == 1:
     print()
     s()
     print()
+
     if choice == 1:
         print('Вы выбрали калькулятор.')
         print()
@@ -37,11 +38,15 @@ while 1 == 1:
         elif sign == '*':
             print('Ответ: ' + str(num1 * num2))
         elif sign == '/' or sign == ':':
-            print('Ответ: ' + str(num1 / num2))
+            if num2 == 0:
+                print('Ответ: ∞.')
+            else:
+                print('Ответ: ' + str(num1 / num2))
         elif sign == '**' or sign == '^':
             print('Ответ: ' + str(num1 ** num2))
         else:
             print('Введён неизвестный знак.')
+
     elif choice == 2:
         print('Вы выбрали вычисление квадратного корня.')
         print()
@@ -51,6 +56,7 @@ while 1 == 1:
             print('Ответ: i')
         else:
             print('Ответ: ' + str(math.sqrt(num)) + '.')
+
     elif choice == 3:
         print('Вы выбрали решение квадратных уравнений через дискриминант.')
         print()
@@ -80,6 +86,7 @@ while 1 == 1:
             print('Ответ: ' + str(x1) + '; ' + str(x2) + '.')
         else:
             print('Неизвестная ошибка.')
+            
     elif choice == 4:
         print('Вы выбрали тригонометрию.')
         print()
@@ -101,6 +108,7 @@ while 1 == 1:
             print('Ответ: ' + str(xsinrcos) + '.')
         else:
             print('Выбран несуществующий пункт.')
+
     elif choice == 5:
         print('Вы выбрали Теорему Пифагора.')
         print()
@@ -114,7 +122,7 @@ while 1 == 1:
             a = int(input('Введите значение известного катета: '))
             print()
             c = int(input('Введите значение гипотенузы: '))
-            b2 = gi**2 - k**2
+            b2 = c**2 - a**2
             b = math.sqrt(b2)
             print()
             print('k^2 = ' + str(b2) + ';')
@@ -131,6 +139,7 @@ while 1 == 1:
             print('Ответ: ' + str(c) + '.')
         else:
             print('Выбран несуществующий пункт.')
+
     elif choice == 6:
         print('Вы выбрали калькулятор дробей.')
         print()
@@ -176,6 +185,7 @@ while 1 == 1:
             print('Ответ: ' + str(int(ad)) + '/' + str(int(bc)) + '.')
         else:
             print('Введён неизвестный знак.')
+            
     elif choice == 7:
         print('Вы выбрали перевод дробей.')
         print()
@@ -193,8 +203,10 @@ while 1 == 1:
             print('Ответ: ' + str(chab) + '.')
         else:
             print('Выбран несуществующий пункт.')
+
     else:
         print('Выбран несуществущий пункт. ')
+
     print()
     s()
     print()
