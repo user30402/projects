@@ -19,12 +19,12 @@ while 1 == 1:
     print()
     s()
     print()
-    choice = int(input('Введите номер пункта: '))
+    choice = input('Введите номер пункта: ')
     print()
     s()
     print()
 
-    if choice == 1:
+    if choice == '1':
         print('Вы выбрали калькулятор.')
         print()
         num1 = float(input('Введите число: '))
@@ -32,32 +32,34 @@ while 1 == 1:
         num2 = float(input('Введите число: '))
         print()
         if sign == '+':
-            print('Ответ: ' + str(num1 + num2))
+            print('Ответ: ' + str(num1 + num2) + '.')
         elif sign == '-':
-            print('Ответ: ' + str(num1 - num2))
+            print('Ответ: ' + str(num1 - num2) + '.')
         elif sign == '*':
-            print('Ответ: ' + str(num1 * num2))
+            print('Ответ: ' + str(num1 * num2) + '.')
         elif sign == '/' or sign == ':':
             if num2 == 0:
                 print('Ответ: ∞.')
             else:
-                print('Ответ: ' + str(num1 / num2))
+                print('Ответ: ' + str(num1 / num2) + '.')
         elif sign == '**' or sign == '^':
-            print('Ответ: ' + str(num1 ** num2))
+            print('Ответ: ' + str(num1 ** num2) + '.')
         else:
             print('Введён неизвестный знак.')
 
-    elif choice == 2:
+    elif choice == '2':
         print('Вы выбрали вычисление квадратного корня.')
         print()
         num = int(input('Введите число: '))
         print()
         if num < 0:
             print('Ответ: i')
+        elif num == 0 or int(num) > 0:
+            print('Ответ: ' + str(math.sqrt(int(num))) + '.')
         else:
-            print('Ответ: ' + str(math.sqrt(num)) + '.')
+            print('Неизвестная ошибка!')
 
-    elif choice == 3:
+    elif choice == '3':
         print('Вы выбрали решение квадратных уравнений через дискриминант.')
         print()
         a = int(input('Введите a: '))
@@ -87,48 +89,59 @@ while 1 == 1:
         else:
             print('Неизвестная ошибка.')
             
-    elif choice == 4:
+    elif choice == '4':
         print('Вы выбрали тригонометрию.')
         print()
         print('Выберите то, что нужно найти.')
         print()
         print('1 - Синус; 2 - Косинус;')
         print()
-        ask = int(input('Введите пункт: '))
+        choice = input('Введите пункт: ')
         print()
-        if ask == 1:
+        if choice == '1':
             trx = float(input('Введите косинус: '))
-            xsinrcos = math.sqrt(1 - trx**2)
             print()
-            print('Ответ: ' + str(xsinrcos) + '.')
-        elif ask == 2:
+            if trx > 1:
+                print('Косинус не может быть больше единицы!')
+            elif trx < -1:
+                print('Косинус не может быть меньше минус единицы!')
+            else:
+                xsinrcos = math.sqrt(1 - trx**2)
+                print('Ответ: ' + str(xsinrcos) + '.')
+        elif choice == '2':
             trx = float(input('Введите синус: '))
-            xsinrcos = math.sqrt(1 - trx**2)
             print()
-            print('Ответ: ' + str(xsinrcos) + '.')
+            if trx > 1:
+                print('Синус не может быть больше единицы!')
+            elif trx < -1:
+                print('Синус не может быть меньше минус единицы!')
+            else:
+                xsinrcos = math.sqrt(1 - trx**2)
+                print('Ответ: ' + str(xsinrcos) + '.')
         else:
             print('Выбран несуществующий пункт.')
 
-    elif choice == 5:
+    elif choice == '5':
         print('Вы выбрали Теорему Пифагора.')
         print()
         print('Выберите то, что нужно найти.')
         print()
         print('1 - Катет; 2 - Гипотенузу;')
         print()
-        korg = int(input('Введите пункт: '))
+        korg = input('Введите пункт: ')
         print()
-        if korg == 1:
+        if korg == '1':
             a = int(input('Введите значение известного катета: '))
             print()
             c = int(input('Введите значение гипотенузы: '))
             b2 = c**2 - a**2
-            b = math.sqrt(b2)
             print()
-            print('k^2 = ' + str(b2) + ';')
-            print()
-            print('Ответ: ' + str(b) + '.')
-        elif korg == 2:
+            if b2 < 0:
+                print('Ответ: Решений нет.')
+            else:
+                b = math.sqrt(b2)
+                print('Ответ: ' + str(b) + '.')
+        elif korg == '2':
             a = int(input('Введите значение первого катета: '))
             b = int(input('Введите значение второго катета: '))
             c2 = a**2 + b**2
@@ -140,7 +153,7 @@ while 1 == 1:
         else:
             print('Выбран несуществующий пункт.')
 
-    elif choice == 6:
+    elif choice == '6':
         print('Вы выбрали калькулятор дробей.')
         print()
         a = int(input('Введите числитель первой дроби: '))
@@ -186,16 +199,16 @@ while 1 == 1:
         else:
             print('Введён неизвестный знак.')
             
-    elif choice == 7:
+    elif choice == '7':
         print('Вы выбрали перевод дробей.')
         print()
         print('Выберите метод перевода.')
         print()
         print('1 - Обыкновенная -> Десятичная.')
         print()
-        choice = int(input('Введите пункт: '))
+        choice = input('Введите пункт: ')
         print()
-        if choice == 1:
+        if choice == '1':
             a = int(input('Введите числитель дроби: '))
             b = int(input('Введите знаменатель дроби: '))
             print()
