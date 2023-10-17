@@ -1,4 +1,4 @@
-import math, os, webbrowser as wb, time
+import math, os, webbrowser as wb
 
 def s():
     print('--------------------')
