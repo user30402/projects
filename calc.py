@@ -1,12 +1,10 @@
-import math
-import os
-
-clear = lambda: os.system('cls')
+import math, os, webbrowser as wb, time
 
 def s():
     print('--------------------')
 
 while 1 == 1:
+    print('Сделано пользователем user30402.')
     s()
     print()
     print('Добро пожаловать в универсальную программу для вычислений, для начала работы выберите пункт.')
@@ -217,11 +215,19 @@ while 1 == 1:
         else:
             print('Выбран несуществующий пункт.')
 
+    elif choice == '8':
+        print('Вы выбрали контакты разработчика.')
+        yt = 'https://www.youtube.com/channel/UCTRNc1pp445lg8USsC57C-g'
+        github = 'https://github.com/user30402'
+        vk = 'https://vk.com/user30402'
+        print('YouTube - ' + yt)
+        print('GitHub - ' + github)
+        print('VK - ' + vk)
+
     else:
         print('Выбран несуществущий пункт. ')
-
     print()
     s()
     print()
     input('Нажмите Enter, чтобы очистить терминал... ')
-    clear()
+    os.system('cls')
