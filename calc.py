@@ -1,7 +1,8 @@
 import math, os, webbrowser as wb
+from colorama import *
 
 def s():
-    print('--------------------')
+    print(Style.BRIGHT + Fore.BLUE + '--------------------')
 
 while 1 == 1:
     s()
