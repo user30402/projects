@@ -13,7 +13,7 @@ while 1 == 1:
     print()
     print('1 - Калькулятор; 2 - Вычисление квадратного корня; 3 - Решение квадратных уравнений через дискриминант;')
     print()
-    print('4 - Тригонометрия; 5 - Теорема Пифагора; 6 - Калькулятор дробей; 7 - Перевод дробей.')
+    print('4 - Тригонометрия; 5 - Теорема Пифагора; 6 - Калькулятор дробей; 7 - Перевод дробей; 8 - Контакты разработчика.')
     print()
     s()
     print()
@@ -217,11 +217,14 @@ while 1 == 1:
 
     elif choice == '8':
         print('Вы выбрали контакты разработчика.')
+        print()
         yt = 'https://www.youtube.com/channel/UCTRNc1pp445lg8USsC57C-g'
         github = 'https://github.com/user30402'
         vk = 'https://vk.com/user30402'
         print('YouTube - ' + yt)
+        print()
         print('GitHub - ' + github)
+        print()
         print('VK - ' + vk)
 
     else:
