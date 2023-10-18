@@ -5,6 +5,7 @@ def s():
     print(Style.BRIGHT + Fore.BLUE + '--------------------')
 
 while 1 == 1:
+
     s()
     print()
     print('Сделано пользователем user30402.')
@@ -29,26 +30,27 @@ while 1 == 1:
     if choice == '1':
         print('Вы выбрали калькулятор.')
         print()
-        num1 = float(input('Введите число: '))
-        sign = str(input('Введите знак: '))
-        num2 = float(input('Введите число: '))
+        mathex = input('Введите математический пример: ')
         print()
-        if sign == '+':
-            print('Ответ: ' + str(num1 + num2) + '.')
-        elif sign == '-':
-            print('Ответ: ' + str(num1 - num2) + '.')
-        elif sign == '*':
-            print('Ответ: ' + str(num1 * num2) + '.')
-        elif sign == '/' or sign == ':':
-            if num2 == 0:
-                print('Ответ: ∞.')
+        try:
+            num1, sign, num2 = mathex.split(' ')
+            if sign == '+':
+                print('Ответ: ' + str(float(num1) + float(num2)) + '.')
+            elif sign == '-':
+                print('Ответ: ' + str(float(num1) - float(num2)) + '.')
+            elif sign == '*':
+                print('Ответ: ' + str(float(num1) * float(num2)) + '.')
+            elif sign == '/' or sign == ':':
+                try:
+                    print('Ответ: ' + str(float(num1) / float(num2)))
+                except:
+                    print('Невозможно деление на ноль.')
+            elif sign == '**' or sign == '^':
+                print('Ответ: ' + str(float(num1) ** float(num2)) + '.')
             else:
-                print('Ответ: ' + str(num1 / num2) + '.')
-        elif sign == '**' or sign == '^':
-            print('Ответ: ' + str(num1 ** num2) + '.')
-        else:
-            print('Введён неизвестный знак.')
-
+                print('Введён неизвестный знак.')
+        except:
+            print('Ошибка, попробуйте ставить пробелы.')
     elif choice == '2':
         print('Вы выбрали вычисление квадратного корня.')
         print()
