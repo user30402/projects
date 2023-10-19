@@ -30,23 +30,24 @@ while 1 == 1:
     if choice == '1':
         print('Вы выбрали калькулятор.')
         print()
-        mathex = input('Введите математический пример: ')
+        mathex = input('Введите математический пример через пробелы: ')
         print()
         try:
             num1, sign, num2 = mathex.split(' ')
+            num1, sign, num2 = float(num1), sign, float(num2)
             if sign == '+':
-                print('Ответ: ' + str(float(num1) + float(num2)) + '.')
+                print('Ответ: ' + str(num1 + num2) + '.')
             elif sign == '-':
-                print('Ответ: ' + str(float(num1) - float(num2)) + '.')
+                print('Ответ: ' + str(num1 - num2) + '.')
             elif sign == '*':
-                print('Ответ: ' + str(float(num1) * float(num2)) + '.')
+                print('Ответ: ' + str(num1 * num2) + '.')
             elif sign == '/' or sign == ':':
                 try:
-                    print('Ответ: ' + str(float(num1) / float(num2)))
+                    print('Ответ: ' + str(num1 / num2))
                 except:
                     print('Невозможно деление на ноль.')
             elif sign == '**' or sign == '^':
-                print('Ответ: ' + str(float(num1) ** float(num2)) + '.')
+                print('Ответ: ' + str(num1 ** num2) + '.')
             else:
                 print('Введён неизвестный знак.')
         except:
@@ -66,9 +67,9 @@ while 1 == 1:
     elif choice == '3':
         print('Вы выбрали решение квадратных уравнений через дискриминант.')
         print()
-        a = int(input('Введите a: '))
-        b = int(input('Введите b: '))
-        c = int(input('Введите c: '))
+        mathex = input('Введите a, b, c через запятую: ')
+        a, b, c = mathex.split(',')
+        a, b, c = float(a), float(b), float(c)
         print()
         D = (b**2) - (4*a*c)
         print('D = b^2 - 4ac = ' + str(D))
