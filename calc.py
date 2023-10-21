@@ -1,4 +1,4 @@
-import math, os, webbrowser as wb
+import math, os, webbrowser as wb, winsound
 from colorama import *
 
 def s():
@@ -45,12 +45,14 @@ while 1 == 1:
                 try:
                     print('Ответ: ' + str(num1 / num2))
                 except:
+                    winsound.PlaySound("*", winsound.SND_ASYNC)
                     print('Невозможно деление на ноль.')
             elif sign == '**' or sign == '^':
                 print('Ответ: ' + str(num1 ** num2) + '.')
             else:
                 print('Введён неизвестный знак.')
         except:
+            winsound.PlaySound("*", winsound.SND_ASYNC)
             print('Ошибка, попробуйте ставить пробелы.')
     elif choice == '2':
         print('Вы выбрали вычисление квадратного корня.')
@@ -62,6 +64,7 @@ while 1 == 1:
         elif num == 0 or int(num) > 0:
             print('Ответ: ' + str(math.sqrt(int(num))) + '.')
         else:
+            winsound.PlaySound("*", winsound.SND_ASYNC)
             print('Неизвестная ошибка!')
 
     elif choice == '3':
@@ -92,6 +95,7 @@ while 1 == 1:
             print()
             print('Ответ: ' + str(x1) + '; ' + str(x2) + '.')
         else:
+            winsound.PlaySound("*", winsound.SND_ASYNC)
             print('Неизвестная ошибка.')
             
     elif choice == '4':
@@ -107,8 +111,10 @@ while 1 == 1:
             trx = float(input('Введите косинус: '))
             print()
             if trx > 1:
+                winsound.PlaySound("*", winsound.SND_ASYNC)
                 print('Косинус не может быть больше единицы!')
             elif trx < -1:
+                winsound.PlaySound("*", winsound.SND_ASYNC)
                 print('Косинус не может быть меньше минус единицы!')
             else:
                 xsinrcos = math.sqrt(1 - trx**2)
@@ -117,13 +123,16 @@ while 1 == 1:
             trx = float(input('Введите синус: '))
             print()
             if trx > 1:
+                winsound.PlaySound("*", winsound.SND_ASYNC)
                 print('Синус не может быть больше единицы!')
             elif trx < -1:
+                winsound.PlaySound("*", winsound.SND_ASYNC)
                 print('Синус не может быть меньше минус единицы!')
             else:
                 xsinrcos = math.sqrt(1 - trx**2)
                 print('Ответ: ' + str(xsinrcos) + '.')
         else:
+            winsound.PlaySound("*", winsound.SND_ASYNC)
             print('Выбран несуществующий пункт.')
 
     elif choice == '5':
@@ -148,6 +157,7 @@ while 1 == 1:
                 print('Ответ: ' + str(b) + '.')
         elif korg == '2':
             a = int(input('Введите значение первого катета: '))
+            print()
             b = int(input('Введите значение второго катета: '))
             c2 = a**2 + b**2
             c = math.sqrt(c2)
@@ -156,6 +166,7 @@ while 1 == 1:
             print()
             print('Ответ: ' + str(c) + '.')
         else:
+            winsound.PlaySound("*", winsound.SND_ASYNC)
             print('Выбран несуществующий пункт.')
 
     elif choice == '6':
@@ -180,6 +191,7 @@ while 1 == 1:
                 adcb = ad+cb
                 print('Ответ: ' + str(adcb) + '/' + str(bd) + '.')
             else:
+                winsound.PlaySound("*", winsound.SND_ASYNC)
                 print('Неизвестная ошибка.')
         elif sign == '-':
             if b == d:
@@ -192,6 +204,7 @@ while 1 == 1:
                 radcb = rad-rcb
                 print('Ответ: ' + str(radcb) + '/' + str(bd) + '.')
             else:
+                winsound.PlaySound("*", winsound.SND_ASYNC)
                 print('Неизвестная ошибка.')
         elif sign == '*':
             ac = a*c
@@ -202,6 +215,7 @@ while 1 == 1:
             bc = b*c
             print('Ответ: ' + str(int(ad)) + '/' + str(int(bc)) + '.')
         else:
+            winsound.PlaySound("*", winsound.SND_ASYNC)
             print('Введён неизвестный знак.')
             
     elif choice == '7':
@@ -220,6 +234,7 @@ while 1 == 1:
             chab = a/b
             print('Ответ: ' + str(chab) + '.')
         else:
+            winsound.PlaySound("*", winsound.SND_ASYNC)
             print('Выбран несуществующий пункт.')
 
     elif choice == '8':
@@ -235,6 +250,7 @@ while 1 == 1:
         print('VK - ' + vk)
 
     else:
+        winsound.PlaySound("*", winsound.SND_ASYNC)
         print('Выбран несуществущий пункт. ')
     print()
     s()
