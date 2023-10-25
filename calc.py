@@ -3,6 +3,9 @@ from colorama import *
 
 def s():
     print(Style.BRIGHT + Fore.BLUE + '--------------------')
+    
+def snd():
+    winsound.PlaySound("*", winsound.SND_ASYNC)
 
 while 1 == 1:
 
@@ -18,7 +21,9 @@ while 1 == 1:
     print()
     print('1 - Калькулятор; 2 - Вычисление квадратного корня; 3 - Решение квадратных уравнений через дискриминант;')
     print()
-    print('4 - Тригонометрия; 5 - Теорема Пифагора; 6 - Калькулятор дробей; 7 - Перевод дробей; 8 - Контакты разработчика.')
+    print('4 - Тригонометрия; 5 - Теорема Пифагора; 6 - Калькулятор дробей; 7 - Перевод дробей; 8 - Нахождение площади.')
+    print()
+    print('9 - Контакты разработчика.')
     print()
     s()
     print()
@@ -27,7 +32,7 @@ while 1 == 1:
     s()
     print()
 
-    if choice == '1':
+    if choice == '1': 
         print('Вы выбрали калькулятор.')
         print()
         mathex = input('Введите математический пример через пробелы: ')
@@ -36,24 +41,25 @@ while 1 == 1:
             num1, sign, num2 = mathex.split(' ')
             num1, sign, num2 = float(num1), sign, float(num2)
             if sign == '+':
-                print('Ответ: ' + str(num1 + num2) + '.')
+                print(f'Ответ: {num1 + num2}.')
             elif sign == '-':
-                print('Ответ: ' + str(num1 - num2) + '.')
+                print(f'Ответ: {num1 - num2}.')
             elif sign == '*':
-                print('Ответ: ' + str(num1 * num2) + '.')
+                print(f'Ответ: {num1 * num2}.')
             elif sign == '/' or sign == ':':
                 try:
-                    print('Ответ: ' + str(num1 / num2))
+                    print(f'Ответ: {num1 / num2}.')
                 except:
-                    winsound.PlaySound("*", winsound.SND_ASYNC)
+                    snd()
                     print('Невозможно деление на ноль.')
             elif sign == '**' or sign == '^':
-                print('Ответ: ' + str(num1 ** num2) + '.')
+                print(f'Ответ: {num1**num2}.')
             else:
                 print('Введён неизвестный знак.')
         except:
-            winsound.PlaySound("*", winsound.SND_ASYNC)
+            snd()
             print('Ошибка, попробуйте ставить пробелы.')
+            
     elif choice == '2':
         print('Вы выбрали вычисление квадратного корня.')
         print()
@@ -62,9 +68,9 @@ while 1 == 1:
         if num < 0:
             print('Ответ: i')
         elif num == 0 or int(num) > 0:
-            print('Ответ: ' + str(math.sqrt(int(num))) + '.')
+            print(f'Ответ: {math.sqrt(num)}.')
         else:
-            winsound.PlaySound("*", winsound.SND_ASYNC)
+            snd()
             print('Неизвестная ошибка!')
 
     elif choice == '3':
@@ -75,27 +81,27 @@ while 1 == 1:
         a, b, c = float(a), float(b), float(c)
         print()
         D = (b**2) - (4*a*c)
-        print('D = b^2 - 4ac = ' + str(D))
+        print(f'D = b^2 - 4ac = {D}.')
         print()
         if D < 0:
             print('Корней нет. ')
         elif D == 0:
             print('1 корень; ')
             print()
-            x = -b/2*a
-            print('x = -(b / 2a) = ' + str(x) + ';')
-            print('Ответ: ' + str(x) + '.')
+            x = (-b)/(2*a)
+            print(f'x = -(b / 2a) = {x};')
+            print(f'Ответ: {x}.')
         elif D > 0:
             print('2 корня.')
             print()
             x1 = -(b - math.sqrt(D)) / (2*a)
             x2 = -(b + math.sqrt(D)) / (2*a)
-            print('x1 = -(b - √D) / (2a) = ' + str(x1) + ';')
-            print('x2 = -(b + √D) / (2a) = ' + str(x2) + ';')
+            print(f'x1 = -(b - √D) / (2a) = {x1};')
+            print(f'x2 = -(b + √D) / (2a) = {x2};')
             print()
-            print('Ответ: ' + str(x1) + '; ' + str(x2) + '.')
+            print(f'Ответ: {x1}; {x2}.')
         else:
-            winsound.PlaySound("*", winsound.SND_ASYNC)
+            snd()
             print('Неизвестная ошибка.')
             
     elif choice == '4':
@@ -105,34 +111,34 @@ while 1 == 1:
         print()
         print('1 - Синус; 2 - Косинус;')
         print()
-        choice = input('Введите пункт: ')
+        choice = input('Введите номер пункта: ')
         print()
         if choice == '1':
             trx = float(input('Введите косинус: '))
             print()
             if trx > 1:
-                winsound.PlaySound("*", winsound.SND_ASYNC)
+                snd()
                 print('Косинус не может быть больше единицы!')
             elif trx < -1:
-                winsound.PlaySound("*", winsound.SND_ASYNC)
+                snd()
                 print('Косинус не может быть меньше минус единицы!')
             else:
                 xsinrcos = math.sqrt(1 - trx**2)
-                print('Ответ: ' + str(xsinrcos) + '.')
+                print(f'Ответ: {xsinrcos}.')
         elif choice == '2':
             trx = float(input('Введите синус: '))
             print()
             if trx > 1:
-                winsound.PlaySound("*", winsound.SND_ASYNC)
+                snd()
                 print('Синус не может быть больше единицы!')
             elif trx < -1:
-                winsound.PlaySound("*", winsound.SND_ASYNC)
+                snd()
                 print('Синус не может быть меньше минус единицы!')
             else:
                 xsinrcos = math.sqrt(1 - trx**2)
-                print('Ответ: ' + str(xsinrcos) + '.')
+                print(f'Ответ: {xsinrcos}.')
         else:
-            winsound.PlaySound("*", winsound.SND_ASYNC)
+            snd()
             print('Выбран несуществующий пункт.')
 
     elif choice == '5':
@@ -142,9 +148,9 @@ while 1 == 1:
         print()
         print('1 - Катет; 2 - Гипотенузу;')
         print()
-        korg = input('Введите пункт: ')
+        choice = input('Введите номер пункта: ')
         print()
-        if korg == '1':
+        if choice == '1':
             a = int(input('Введите значение известного катета: '))
             print()
             c = int(input('Введите значение гипотенузы: '))
@@ -154,19 +160,19 @@ while 1 == 1:
                 print('Ответ: Решений нет.')
             else:
                 b = math.sqrt(b2)
-                print('Ответ: ' + str(b) + '.')
-        elif korg == '2':
+                print(f'Ответ: {b}.')
+        elif choice == '2':
             a = int(input('Введите значение первого катета: '))
             print()
             b = int(input('Введите значение второго катета: '))
             c2 = a**2 + b**2
             c = math.sqrt(c2)
             print()
-            print('c^2 = ' + str(c2) + ';')
+            print(f'c^2 = {c2};')
             print()
-            print('Ответ: ' + str(c) + '.')
+            print(f'Ответ: {c}.')
         else:
-            winsound.PlaySound("*", winsound.SND_ASYNC)
+            snd()
             print('Выбран несуществующий пункт.')
 
     elif choice == '6':
@@ -183,39 +189,39 @@ while 1 == 1:
         if sign == '+':
             if b == d:
                 sac = a + c
-                print('Ответ: ' + str(sac) + '/' + str(b) + '.')
+                print(f'Ответ: {sac}/{b}.')
             elif b != d:
                 bd = b*d
                 ad = a*d
                 cb = c*b
                 adcb = ad+cb
-                print('Ответ: ' + str(adcb) + '/' + str(bd) + '.')
+                print(f'Ответ: {adcb}/{bd}.')
             else:
-                winsound.PlaySound("*", winsound.SND_ASYNC)
+                snd()
                 print('Неизвестная ошибка.')
         elif sign == '-':
             if b == d:
                 rac = a - c
-                print('Ответ: ' + str(rac) + '/' + str(b) + '.')
+                print(f'Ответ: {rac}/{b}.')
             elif b != d:
                 rbd = b*d
                 rad = a*d
                 rcb = c*b
                 radcb = rad-rcb
-                print('Ответ: ' + str(radcb) + '/' + str(bd) + '.')
+                print(f'Ответ: {radcb}/{bd}.')
             else:
-                winsound.PlaySound("*", winsound.SND_ASYNC)
+                snd()
                 print('Неизвестная ошибка.')
         elif sign == '*':
             ac = a*c
             bd = b*d
-            print('Ответ: ' + str(ac) + '/' + str(bd) + '.')
+            print(f'Ответ: {ac}/{bd}.')
         elif sign == '/':
             ad = a*d
             bc = b*c
-            print('Ответ: ' + str(int(ad)) + '/' + str(int(bc)) + '.')
+            print(f'Ответ: {ad}/{bc}.')
         else:
-            winsound.PlaySound("*", winsound.SND_ASYNC)
+            snd()
             print('Введён неизвестный знак.')
             
     elif choice == '7':
@@ -225,35 +231,106 @@ while 1 == 1:
         print()
         print('1 - Обыкновенная -> Десятичная.')
         print()
-        choice = input('Введите пункт: ')
+        choice = input('Введите номер пункта: ')
         print()
         if choice == '1':
             a = int(input('Введите числитель дроби: '))
             b = int(input('Введите знаменатель дроби: '))
             print()
             chab = a/b
-            print('Ответ: ' + str(chab) + '.')
+            print(f'Ответ: {chab}.')
         else:
-            winsound.PlaySound("*", winsound.SND_ASYNC)
+            snd()
             print('Выбран несуществующий пункт.')
 
     elif choice == '8':
+        print('Вы выбрали нахождение площади.')
+        print()
+        print('1 - Площадь квадрата; 2 - Площадь прямоугольника; 3 - Площадь прямоугольного треугольника; 4 - Площадь круга; 5 - Площадь трапеции.')
+        print()
+        choice = input('Введите номер пункта: ')
+        print()
+        if choice == '1':
+            print('Вы выбрали нахождение площади квадрата.')
+            print()
+            print('1 - Нахождение площади по стороне; 2 - Нахождение площади по диагонали.')
+            print()
+            choice = input('Введите номер пункта: ')
+            print()
+            if choice == '1':
+                print('Вы выбрали нахождение площади квадрата по стороне.')
+                print()
+                a = int(input('Введите сторону квадрата: '))
+                print()
+                a = a**2
+                print(f'Ответ: {a}.')
+            elif choice == '2':
+                print('Вы выбрали нахождение площади квадрата по диагонали.')
+                print()
+                d = int(input('Введите диагональ квадрата: '))
+                print()
+                d = (d ** 2) / (2)
+                print(f'Ответ: {d}.')
+            else:
+                snd()
+                print('Выбран несуществующий пункт.')
+        elif choice == '2':
+            print('Вы выбрали нахождение площади прямоугольника.')
+            print()
+            a = input('Введите две стороны прямоугольника через запятую: ')
+            print()
+            a, b = a.split(',')
+            a, b = float(a), float(b)
+            print()
+            ab = a * b
+            print(f'Ответ: {ab}')
+        elif choice == '3':
+            print('Вы выбрали нахождение площади прямоугольного треугольника.')
+            print()
+            a = input('Введите 2 катета треугольника через запятую ')
+            k1, k2 = a.split(',')
+            k1, k2 = float(k1), float(k2)
+            a = (k1 * k2) / (2)
+            print()
+            print(f'Ответ: {a}.')
+        elif choice == '4':
+            print('Вы выбрали нахождение площади круга.')
+            print()
+            a = float(input('Введите радиус круга: '))
+            a = (a ** 2) * math.pi
+            print()
+            print(f'Ответ: {a}.')
+        elif choice == '5':
+            print('Вы выбрали нахождение площади трапеции.')
+            print()
+            a = input('Введите два основания трапеции через запятую: ')
+            a, b = a.split(',')
+            a, b = float(a), float(b)
+            h = float(input('Введите высоту трапеции: '))
+            st = ((a + b) / 2) * (h)
+            print()
+            print(f'Ответ: {st}.')
+        else:
+            snd()
+            print('Выбран несуществующий пункт.')
+
+    elif choice == '9':
         print('Вы выбрали контакты разработчика.')
         print()
         yt = 'https://www.youtube.com/channel/UCTRNc1pp445lg8USsC57C-g'
         github = 'https://github.com/user30402'
         vk = 'https://vk.com/user30402'
-        print('YouTube - ' + yt)
+        print(f'YouTube - {yt}')
         print()
-        print('GitHub - ' + github)
+        print(f'GitHub - {github}')
         print()
-        print('VK - ' + vk)
+        print(f'VK - {vk}')
 
     else:
-        winsound.PlaySound("*", winsound.SND_ASYNC)
+        snd()
         print('Выбран несуществущий пункт. ')
     print()
     s()
     print()
-    input('Нажмите Enter, чтобы очистить терминал... ')
+    input(Style.BRIGHT + Fore.RED + 'Нажмите Enter, чтобы очистить консоль... ')
     os.system('cls')
