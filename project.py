@@ -36,27 +36,21 @@ while 1 == 1:
     #
     if mult == 'K' or mult == 'k' or mult == 'к' or mult == 'К':
         getstat *= 1000
-        res = 1000
         resmult = 1
     elif mult == 'M' or mult == 'm' or mult == 'М' or mult == 'м':
         getstat *= 1000000
-        res = 1000000
         resmult = 2
     elif mult == 'B' or mult == 'b' or mult == 'В' or mult == 'в':
         getstat *= 1000000000
-        res = 1000000000
         resmult = 3
     elif mult == 'T' or mult == 't' or mult == 'Т' or mult == 'т':
         getstat *= 1000000000000
-        res = 1000000000000
         resmult = 4
     elif mult == 'Qa' or mult == 'qA' or mult == 'QA' or mult == 'qa':
         getstat *= 1000000000000000
-        res = 1000000000000000
         resmult = 5
     elif mult == 'Qi' or mult == 'qI' or mult == 'QI' or mult == 'qi':
         getstat *= 1000000000000000000
-        res = 1000000000000000000
         resmult = 6
     #
     stat = getstat
