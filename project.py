@@ -1,4 +1,3 @@
-
 import os
 
 def deco():
@@ -87,7 +86,7 @@ while 1 == 1:
     print()
     deco()
     print()
-    print('Discord - user304.638')
+    print('Discord - user30402.638')
     print()
     deco()
     print()
