@@ -1,4 +1,7 @@
 import os
+from datetime import datetime
+
+curdate = datetime.now()
 
 def deco():
     print('|--------------------|')
@@ -140,6 +143,8 @@ while 1 == 1:
         stat = round(stat, 2)
 
         print(f'У вас будет +{stat}{mult} статы.')
+        print()
+        print(f'Запрос был оформлен в {curdate.hour}:{curdate.minute}.')
 
     print()
     deco()
