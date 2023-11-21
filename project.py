@@ -41,8 +41,15 @@ while 1 == 1:
 
         if delay == 1.5:
             time *= 0.80
+            a = True
         elif delay == 0.5:
             time *= 2
+            a = True
+        elif delay == 1:
+            time *= 1
+            a = True
+        else:
+            a = False
 
         if mult == 'K' or mult == 'k' or mult == 'к' or mult == 'К':
             getstat *= 1000
@@ -142,9 +149,15 @@ while 1 == 1:
         
         stat = round(stat, 2)
 
-        print(f'У вас будет +{stat}{mult} статы.')
-        print()
-        print(f'Запрос был оформлен в {curdate.hour}:{curdate.minute}.')
+        if a == True:
+
+            print(f'У вас будет +{stat}{mult} статы.')
+            print()
+            print(f'Запрос был оформлен в {curdate.hour}:{curdate.minute}.')
+        
+        elif a == False:
+
+            print('Ошибка! Укажите верный промежуток во времени! ')
 
     print()
     deco()
