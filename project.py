@@ -14,7 +14,7 @@ while 1 == 1:
     print()
     deco()
     print()
-    print('1 - Калькулятор статов.')
+    print('1 - Калькулятор статов; 2 - Кол-во статов на локации.')
     print()
     choice = input('Введите пункт: ')
     print()
@@ -51,7 +51,7 @@ while 1 == 1:
         else:
             a = False
 
-        if mult == 'K' or mult == 'k' or mult == 'к' or mult == 'К':
+        if mult == 'K' or mult == 'k' or mult == 'К' or mult == 'к':
             getstat *= 1000
             res = 1000
             resmult = 1
@@ -158,6 +158,259 @@ while 1 == 1:
         elif a == False:
 
             print('Ошибка! Укажите верный промежуток во времени! ')
+
+    elif choice == '2':
+        
+        print('1 - FS; 2 - BT; 3 - MS/JF; 4 - PP.')
+        print()
+        choice = input('Введите пункт: ')
+        print()
+        if choice == '1':
+            print('1 - Rock; 2 - Crystal; 3 - Blue God Star; 4 - Green God Star; 5 - Red God Star.')
+            print()
+            choice = input('Введите пункт: ')
+            print()
+            mult = int(input('Введите Ваш множитель на Fist Strenght: '))
+            print()
+
+            if choice == '1':
+                mult *= 10
+            elif choice == '2':
+                mult *= 100
+            elif choice == '3':
+                mult *= 2000
+            elif choice == '4':
+                mult *= 40000
+            elif choice == '5':
+                mult *= 800000
+
+            stat = mult
+            resmult = 0
+
+            while stat > 1000:
+                stat /= 1000
+                resmult += 1
+
+            if resmult == 1:
+                mult = 'K'
+            elif resmult == 2:
+                mult = 'M'
+            elif resmult == 3:
+                mult = 'B'
+            elif resmult == 4:
+                mult = 'T'
+            elif resmult == 5:
+                mult = 'Qa'
+            elif resmult == 6:
+                mult = 'Qi'
+            elif resmult == 7:
+                mult = 'Sx'
+            elif resmult == 8:
+                mult = 'Sp'
+            elif resmult == 9:
+                mult = 'Oc'
+            elif resmult == 10:
+                mult = 'No'
+            elif resmult == 11:
+                mult = 'De'
+            elif resmult == 12:
+                mult = 'Ud'
+            elif resmult == 13:
+                mult = 'Dd'
+            elif resmult == 14:
+                mult = 'Td'
+            else:
+                mult = 'n/a'
+
+            print(f'Вы будете получать {stat}{mult} за тик.')
+
+        elif choice == '2':
+            print('1 - Ice Bath; 2 - Fire Bath; 3 - Iceberg; 4 - Tornado; 5 - Volcano; 6 - Hellfire; 7 - Green Acid; 8 - Red Acid.')
+            print()
+            choice = input('Введите пункт: ')
+            print()
+            mult = int(input('Введите Ваш множитель на Body Toughness: '))
+            print()
+            if choice == '1':
+                mult *= 5
+            elif choice == '2':
+                mult *= 10
+            elif choice == '3':
+                mult *= 20
+            elif choice == '4':
+                mult *= 50
+            elif choice == '5':
+                mult *= 100
+            elif choice == '6':
+                mult *= 2000
+            elif choice == '7':
+                mult *= 40000
+            elif choice == '8':
+                mult *= 800000
+
+            stat = mult
+            resmult = 0
+
+            while stat > 1000:
+                stat /= 1000
+                resmult += 1
+
+            if resmult == 1:
+                mult = 'K'
+            elif resmult == 2:
+                mult = 'M'
+            elif resmult == 3:
+                mult = 'B'
+            elif resmult == 4:
+                mult = 'T'
+            elif resmult == 5:
+                mult = 'Qa'
+            elif resmult == 6:
+                mult = 'Qi'
+            elif resmult == 7:
+                mult = 'Sx'
+            elif resmult == 8:
+                mult = 'Sp'
+            elif resmult == 9:
+                mult = 'Oc'
+            elif resmult == 10:
+                mult = 'No'
+            elif resmult == 11:
+                mult = 'De'
+            elif resmult == 12:
+                mult = 'Ud'
+            elif resmult == 13:
+                mult = 'Dd'
+            elif resmult == 14:
+                mult = 'Td'
+            else:
+                mult = 'n/a'
+            
+            print(f'Вы будете получать {stat}{mult} за тик.')
+
+        elif choice == '3':
+            print('1 - 100 Lb; 2 - 1 Ton; 3 - 10 Ton; 4 - 100 Ton; 5 - 1K Ton; 6 - 10K Ton; 7 - 100K Ton; 8 - 1M Ton; 9 - 10M Ton; 10 - 1B Ton.')
+            print()
+            choice = input('Введите пункт: ')
+            print()
+            mult = int(input('Введите Ваш множитель на MS/JF: '))
+            print()
+            if choice == '1':
+                mult *= 2
+            elif choice == '2':
+                mult *= 5
+            elif choice == '3':
+                mult *= 10
+            elif choice == '4':
+                mult *= 20
+            elif choice == '5':
+                mult *= 150
+            elif choice == '6':
+                mult *= 750
+            elif choice == '7':
+                mult *= 3500
+            elif choice == '8':
+                mult *= 18000
+            elif choice == '9':
+                mult *= 90000
+            elif choice == '10':
+                mult *= 400000
+
+            stat = mult
+            resmult = 0
+
+            while stat > 1000:
+                stat /= 1000
+                resmult += 1
+
+            if resmult == 1:
+                mult = 'K'
+            elif resmult == 2:
+                mult = 'M'
+            elif resmult == 3:
+                mult = 'B'
+            elif resmult == 4:
+                mult = 'T'
+            elif resmult == 5:
+                mult = 'Qa'
+            elif resmult == 6:
+                mult = 'Qi'
+            elif resmult == 7:
+                mult = 'Sx'
+            elif resmult == 8:
+                mult = 'Sp'
+            elif resmult == 9:
+                mult = 'Oc'
+            elif resmult == 10:
+                mult = 'No'
+            elif resmult == 11:
+                mult = 'De'
+            elif resmult == 12:
+                mult = 'Ud'
+            elif resmult == 13:
+                mult = 'Dd'
+            elif resmult == 14:
+                mult = 'Td'
+            else:
+                mult = 'n/a'
+            
+            print(f'Вы будете получать {stat}{mult} за тик.')
+
+        elif choice == '4':
+            print('1 - 1M PP Zone; 2 - 1B PP Zone; 3 - 1T PP Zone; 4 - 1Qa PP Zone')
+            print()
+            choice = input('Введите пункт: ')
+            print()
+            mult = int(input('Введите Ваш множитель на Psychic Power: '))
+            print()
+            if choice == '1':
+                mult *= 100
+            elif choice == '2':
+                mult *= 10000
+            elif choice == '3':
+                mult *= 1000000
+            elif choice == '4':
+                mult *= 100000000
+
+            stat = mult
+            resmult = 0
+
+            while stat > 1000:
+                stat /= 1000
+                resmult += 1
+
+            if resmult == 1:
+                mult = 'K'
+            elif resmult == 2:
+                mult = 'M'
+            elif resmult == 3:
+                mult = 'B'
+            elif resmult == 4:
+                mult = 'T'
+            elif resmult == 5:
+                mult = 'Qa'
+            elif resmult == 6:
+                mult = 'Qi'
+            elif resmult == 7:
+                mult = 'Sx'
+            elif resmult == 8:
+                mult = 'Sp'
+            elif resmult == 9:
+                mult = 'Oc'
+            elif resmult == 10:
+                mult = 'No'
+            elif resmult == 11:
+                mult = 'De'
+            elif resmult == 12:
+                mult = 'Ud'
+            elif resmult == 13:
+                mult = 'Dd'
+            elif resmult == 14:
+                mult = 'Td'
+            else:
+                mult = 'n/a'
+            
+            print(f'Вы будете получать {stat}{mult} за тик.')
 
     print()
     deco()
