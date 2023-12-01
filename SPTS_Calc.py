@@ -178,7 +178,7 @@ def main():
     def choice2():
         resmult = 0
         print()
-        print('You have chosen to calculate time for stat')
+        print(Fore.CYAN + 'You have chosen to calculate time for stat')
         print()
         xstat = float(input('Enter the amount of stat you need: '))
         print()
